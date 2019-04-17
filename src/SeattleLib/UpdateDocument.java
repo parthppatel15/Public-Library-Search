@@ -26,10 +26,10 @@ public class UpdateDocument
 	      System.out.println("Connected to the database successfully");  
 	      
 	      // Accessing the database 
-	      MongoDatabase database = mongo.getDatabase("myDb"); 
+	      MongoDatabase database = mongo.getDatabase("Lib"); 
 
 	      // Retrieving a collection 
-	      MongoCollection<Document> collection = database.getCollection("sampleCollection");
+	      MongoCollection<Document> collection = database.getCollection("Seattle");
 	      System.out.println("Collection myCollection selected successfully"); 
 
 	      collection.updateOne(Filters.eq("id", 1), Updates.set("likes", 150));       

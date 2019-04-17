@@ -21,18 +21,25 @@ public class InsertDocument
 	      System.out.println("Connected to the database successfully");  
 	      
 	      // Accessing the database 
-	      MongoDatabase database = mongo.getDatabase("myDb"); 
+	      MongoDatabase database = mongo.getDatabase("Lib"); 
 
 	      // Retrieving a collection
-	      MongoCollection<Document> collection = database.getCollection("sampleCollection"); 
+	      MongoCollection<Document> collection = database.getCollection("Seattle"); 
 	      System.out.println("Collection sampleCollection selected successfully");
 
-	      Document document = new Document("title", "MongoDB") 
-	      .append("id", 1)
-	      .append("description", "database") 
-	      .append("likes", 100) 
-	      .append("url", "http://www.tutorialspoint.com/mongodb/") 
-	      .append("by", "tutorials point");  
+	      Document document = new Document("BibNum", 11111) 
+	      .append("Title", "CS157c NoSQL Book")
+	      .append("Author", "PARSTARINA") 
+	      .append("ISBN", 987654321) 
+	      .append("PublicationYear", "3030") 
+	      .append("Publisher", "The Amazing Squad")
+	      .append("Subjects", "Computer Science, Database")
+	      .append("ItemType", "acbk")
+	      .append("ItemCollection", "cafic")
+	      .append("FloatingItem", "NA")
+	      .append("ItemLocation", "cen")
+	      .append("ReportDate", "2019-04-17T00:00:00.000")
+	      .append("ItemCount", 2);
 	      collection.insertOne(document); 
 	      System.out.println("Document inserted successfully");     
 	   } 
